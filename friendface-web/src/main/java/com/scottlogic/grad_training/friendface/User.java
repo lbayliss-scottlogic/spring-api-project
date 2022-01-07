@@ -10,30 +10,59 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="users")
+@Table(name="userposts")
 public class User {
     @Id
     @Column
-    @NotNull(message = "First Name cannot be null")
-    private String username;
+    private int id;
 
-    @Min(value = 15, message = "Age should not be less than 15")
-    @Max(value = 65, message = "Age should not be greater than 65")
-    private int age;
+    @NotNull(message = "Author cannot be null")
+    private String author;
 
-    public String getUsername() {
-        return username;
+    private String content;
+
+    @Min(value = 0, message = "Likes should not be less than 0")
+    private int likes;
+
+    private String date;
+
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public int getId() {
+        return id;
     }
 
-    public int getAge() {
-        return age;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
