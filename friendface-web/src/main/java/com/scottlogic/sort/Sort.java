@@ -2,9 +2,10 @@ package com.scottlogic.sort;
 
 import com.scottlogic.SortOrder;
 import com.scottlogic.UserPost;
+import com.scottlogic.grad_training.friendface.User;
 
 import java.util.List;
 
 public interface Sort {
-    List<UserPost> sort(List<UserPost> inputList);
+    List<User> sort(List<User> inputList);
 }

@@ -1,7 +1,9 @@
 package com.scottlogic.grad_training.friendface;
 
+import com.scottlogic.UserPost;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -16,18 +18,37 @@ public class UserController {
         this.userPostService = userPostService;
     }
 
-    @GetMapping("/getUserPosts")
-    public List<User> getUserPosts() {
+    public List<User> getPostsFromDB() {
         return userRepository.findAll();
     }
 
-    @PostMapping("/createUserPost")
-    public void createUserPost(@RequestBody User user) {
-        userRepository.save(user);
+    @GetMapping("/getUserPosts")
+    public List<User> getUserPosts() {
+        return getPostsFromDB();
     }
 
-    @GetMapping("/sort/authorUp")
-    public void getPostsSortedAuthorUp() {
+    @PostMapping("/createUserPost")
+    public void createUserPost(@RequestBody User userPost) {
+        userRepository.save(userPost);
+    }
 
+    @GetMapping("/sort/authorAscending")
+    public List<User> getPostsSortedAuthorAscending() {
+        return userPostService.sortByAuthorAscending(getPostsFromDB());
+    }
+
+    @GetMapping("/sort/authorDescending")
+    public List<User> getPostsSortedAuthorDescending() {
+        return userPostService.sortByAuthorDescending(getPostsFromDB());
+    }
+
+    @GetMapping("/sort/dateAscending")
+    public List<User> getPostsSortedDateAscending() {
+        return userPostService.sortByDateAscending(getPostsFromDB());
+    }
+
+    @GetMapping("/sort/dateDescending")
+    public List<User> getPostsSortedDateDescending() {
+        return userPostService.sortByDateDescending(getPostsFromDB());
     }
 }

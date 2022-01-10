@@ -1,5 +1,7 @@
 package com.scottlogic.grad_training.friendface;
 
+import com.scottlogic.UserPost;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +10,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="userposts")
@@ -65,4 +69,11 @@ public class User {
     public void setDate(String date) {
         this.date = date;
     }
+
+//    public List<UserPost> toUserPostList(List<User> users) {
+//        List<UserPost> userPosts = new ArrayList<>();
+//        for (User user : users) {
+//
+//        }
+//    }
 }

@@ -6,15 +6,17 @@ import java.util.Objects;
 
 public class UserPost {
     private String author;
-    private OffsetDateTime dateTime;
+    private String dateTime;
     private String contents;
     private int likeCount;
+    private int id;
 
-    public UserPost(String author, OffsetDateTime dateTime, String contents, int likeCount) {
+    public UserPost(String author, String dateTime, String contents, int likeCount, int id) {
         this.author = author;
         this.dateTime = dateTime;
         this.contents = contents;
         this.likeCount = likeCount;
+        this.id = id;
     }
 
     public String getAuthor() {
@@ -26,7 +28,7 @@ public class UserPost {
         return authorNames[authorNames.length - 1];
     }
 
-    public OffsetDateTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
@@ -38,13 +40,13 @@ public class UserPost {
         return likeCount;
     }
 
-    @Override
-    public String toString() {
-        return "Author: " + author + "\n" +
-               "Time Posted: " + DateTimeFormatter.RFC_1123_DATE_TIME.format(dateTime) + "\n" +
-               "Likes: " + likeCount + "\n" +
-               contents;
-    }
+//    @Override
+//    public String toString() {
+//        return "Author: " + author + "\n" +
+//               "Time Posted: " + DateTimeFormatter.RFC_1123_DATE_TIME.format(dateTime) + "\n" +
+//               "Likes: " + likeCount + "\n" +
+//               contents;
+//    }
 
     @Override
     public boolean equals(Object o) {

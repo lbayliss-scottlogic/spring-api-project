@@ -2,6 +2,7 @@ package com.scottlogic.sort;
 
 import com.scottlogic.SortOrder;
 import com.scottlogic.UserPost;
+import com.scottlogic.grad_training.friendface.User;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,15 +18,15 @@ public class SortAuthor implements Sort {
     }
 
     @Override
-    public List<UserPost> sort(List<UserPost> inputList) {
+    public List<User> sort(List<User> inputList) {
         if (inputList == null) {
             return Arrays.asList();
         }
         if (SortOrder.ASC.equals(sortOrder)) {
-            Collections.sort(inputList, Comparator.comparing(UserPost::getAuthor));
+            Collections.sort(inputList, Comparator.comparing(User::getAuthor));
         }
         else {
-            Collections.sort(inputList, Comparator.comparing(UserPost::getAuthor).reversed());
+            Collections.sort(inputList, Comparator.comparing(User::getAuthor).reversed());
         }
         return inputList;
     }
