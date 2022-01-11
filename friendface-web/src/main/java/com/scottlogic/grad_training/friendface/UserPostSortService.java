@@ -1,15 +1,14 @@
 package com.scottlogic.grad_training.friendface;
 
 import com.scottlogic.SortOrder;
-import com.scottlogic.UserPost;
-import com.scottlogic.sort.SortAuthor;
-import com.scottlogic.sort.SortDate;
+import com.scottlogic.grad_training.friendface.sort.SortAuthor;
+import com.scottlogic.grad_training.friendface.sort.SortDate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserPostService {
+public class UserPostSortService {
 
     public List<User> sortByAuthorAscending(List<User> posts) {
         SortAuthor sortAuthorAsc = new SortAuthor(SortOrder.ASC);

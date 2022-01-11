@@ -1,4 +1,4 @@
-package com.scottlogic.utils;
+package com.scottlogic.grad_training.friendface.utils;
 
 import com.scottlogic.UserPost;
 

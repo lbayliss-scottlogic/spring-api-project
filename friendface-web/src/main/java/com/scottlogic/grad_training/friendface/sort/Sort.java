@@ -1,4 +1,4 @@
-package com.scottlogic.sort;
+package com.scottlogic.grad_training.friendface.sort;
 
 import com.scottlogic.SortOrder;
 import com.scottlogic.UserPost;

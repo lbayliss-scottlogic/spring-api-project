@@ -1,7 +1,6 @@
-package com.scottlogic.sort;
+package com.scottlogic.grad_training.friendface.sort;
 
 import com.scottlogic.SortOrder;
-import com.scottlogic.UserPost;
 import com.scottlogic.grad_training.friendface.User;
 
 import java.util.Arrays;
@@ -9,11 +8,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SortAuthor implements Sort {
+public class SortDate implements Sort {
 
     private SortOrder sortOrder;
 
-    public SortAuthor(SortOrder orderToSort) {
+    public SortDate(SortOrder orderToSort) {
         sortOrder = orderToSort;
     }
 
@@ -23,10 +22,10 @@ public class SortAuthor implements Sort {
             return Arrays.asList();
         }
         if (SortOrder.ASC.equals(sortOrder)) {
-            Collections.sort(inputList, Comparator.comparing(User::getAuthor));
+            Collections.sort(inputList, Comparator.comparing(User::getDate));
         }
         else {
-            Collections.sort(inputList, Comparator.comparing(User::getAuthor).reversed());
+            Collections.sort(inputList, Comparator.comparing(User::getDate).reversed());
         }
         return inputList;
     }
