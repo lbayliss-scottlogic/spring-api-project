@@ -69,11 +69,4 @@ public class User {
     public void setDate(String date) {
         this.date = date;
     }
-
-//    public List<UserPost> toUserPostList(List<User> users) {
-//        List<UserPost> userPosts = new ArrayList<>();
-//        for (User user : users) {
-//
-//        }
-//    }
 }
