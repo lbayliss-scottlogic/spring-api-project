@@ -1,8 +1,6 @@
 package com.scottlogic.grad_training.friendface;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +14,17 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping
-    public List<User> getUsers() {
+    public List<User> getPostsFromDB() {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/getUserPosts")
+    public List<User> getUserPosts() {
+        return getPostsFromDB();
+    }
+
+    @PostMapping("/createUserPost")
+    public void createUserPost(@RequestBody User userPost) {
+        userRepository.save(userPost);
     }
 }
